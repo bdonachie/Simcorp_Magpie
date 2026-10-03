@@ -2,7 +2,9 @@
 
 A Windows desktop app for SimCorp's support portal. Log a case, read the replies, answer them, without fighting the website.
 
-SimCorp Dimension support runs on a Salesforce portal. Logging a case is a multi-step wizard, attaching files means one comment per file, and reading a thread means waiting for Lightning to render. Magpie does all of that from a small tkinter window, with Playwright driving a hidden Chromium.
+As a client, logging and answering cases in SimCorp's Salesforce portal, and uploading files to them, is a nightmare. This is my vibe coded solution.
+
+The portal is Salesforce. Logging a case is a wizard with several steps, attaching files means one comment per file, and reading a thread means waiting for Lightning to render. Magpie does all of that from a small tkinter window, with Playwright driving a hidden Chromium.
 
 It's not a SimCorp product and it isn't affiliated with or endorsed by SimCorp. It just uses the portal's web pages the same way you would.
 
@@ -14,9 +16,9 @@ It's not a SimCorp product and it isn't affiliated with or endorsed by SimCorp. 
 
 ## What it does
 
-**Log a Case** fills in the `Dimension > Error` wizard: priority, operations and onboarding, installation, subject, description, the business impact step, and the project step that shows up when you pick Transition. It submits the case, uploads your files, then opens the new case and posts each file as a feed comment. You get one confirmation dialog, then it runs headless and reports each step as it goes, colour-coded.
+**Log a Case** fills in the `Dimension > Error` wizard: priority, operations and onboarding, installation, subject, description, the business impact step, and the project step that shows up when you pick Transition. It submits the case, uploads your files, then opens the new case and posts each file as a feed comment. You get one confirmation dialog, then it runs headless and reports each step as it goes, in colour.
 
-**Respond to a Case** loads your case list and reads the active cases in the background, using a few browsers that share one login. Every thread gets cached in SQLite, so opening a case is instant. Threads show the way they do on the portal: rich text, @mentions, attachments under their post, and screenshots inline (double-click one to zoom). You can reply under any post, attach files and close a case. A cached thread only gets read again when the portal's `Last Modified Date` says it changed. An hourly check keeps the list fresh and a keep-alive stops the session dying overnight.
+**Respond to a Case** loads your case list and reads the active cases in the background, using a few browsers that share one login. Every thread gets cached in SQLite, so opening a case is instant. Threads show the way they do on the portal: rich text, @mentions, attachments under their post, and screenshots inline (double click one to zoom in). You can reply under any post, attach files and close a case. A cached thread only gets read again when the portal's `Last Modified Date` says it changed. An hourly check keeps the list fresh and a keep alive stops the session dying overnight.
 
 ## Why it's built the way it is
 
@@ -99,7 +101,7 @@ The exe is still called `SimCorp SF`. Renaming it would break pinned shortcuts o
 * The selectors are tied to the portal's UI. If SimCorp redesigns it, things can break. Section 13 of the notes lists the fragile bits.
 * The portal doesn't show a case's Description on the case page, so the Respond tab shows the conversation instead.
 * Windows only. It's tkinter plus a PyInstaller Windows build.
-* It isn't code-signed, so SmartScreen might warn you the first time.
+* It isn't code signed, so SmartScreen might warn you the first time.
 
 ## Licence
 
