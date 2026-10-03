@@ -1,0 +1,4 @@
+# Running the tests and building the standalone exe.
+-r requirements.txt
+pytest
+pyinstaller

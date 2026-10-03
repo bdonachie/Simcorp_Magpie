@@ -1,0 +1,25 @@
+# State the app writes beside the script or exe
+.sc_case_logger.json
+_cache/
+_screenshots/
+
+# Chromium kept in-folder for portable deployments
+browsers/
+
+# PyInstaller output
+build/
+dist/
+_internal/
+*.spec
+*.exe
+*.lnk
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+venv/
+
+# Unredacted capture of a live case; docs/screenshots/ holds the redacted copy
+Screenshot_1.jpg

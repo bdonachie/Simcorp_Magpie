@@ -1,0 +1,11 @@
+# What the app needs to run.
+#
+# The pins matter: playwright 1.44 pins greenlet 3.0.3, the newest greenlet with
+# prebuilt wheels for every Python from 3.9 to 3.12, so nothing needs a C
+# compiler. Check that pairing before bumping playwright (DEVELOPMENT_NOTES.md
+# section 2).
+playwright==1.44.0
+greenlet==3.0.3
+tkcalendar==1.6.1
+babel==2.18.0        # tkcalendar's locale data
+pillow==11.2.1
